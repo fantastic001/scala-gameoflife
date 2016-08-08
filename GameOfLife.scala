@@ -44,10 +44,14 @@ object GameOfLife extends SimpleSwingApplication
 		size = new Dimension(300, 200)
 
 		listenTo(button)
+		listenTo(canvas.mouse.clicks)
 
 		reactions += {
 			case ButtonClicked(component) if component == button =>
 				matrix = simulation.step();
+				canvas.updateMatrix(matrix);
+			case MouseClicked(_, point, _, _, _) => 
+				matrix(point.x / 10)(point.y / 10) = !matrix(point.x / 10)(point.y / 10);
 				canvas.updateMatrix(matrix);
 		}
 	}
