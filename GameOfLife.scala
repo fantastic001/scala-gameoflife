@@ -18,10 +18,9 @@ object GameOfLife extends SimpleSwingApplication
 			matrix(i)(j) = false;
 		}
 	}
-	matrix(0)(0) = true; 
-	matrix(5)(5) = true; 
-	matrix(1)(1) = true;
-	matrix(0)(1) = true;
+	matrix(5)(5) = true;
+	matrix(5)(6) = true;
+	matrix(5)(7) = true;
 
 	var simulation = new Simulation(matrix);
 

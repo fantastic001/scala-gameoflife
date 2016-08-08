@@ -30,6 +30,7 @@ class Simulation(first : Array[Array[Boolean]])
 				}
 			}
 		}
+		matrix = next; 
 		return next;
 	}
 
